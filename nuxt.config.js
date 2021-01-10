@@ -57,13 +57,13 @@ export default {
     "@nuxtjs/axios"
   ],
   axios: {
-    baseURL: `https://socket.rltech.xyz`
+    baseURL: `https://node-socket.rltech.xyz/api`
   },
   server: {
     port: 589
   },
   env: {
-    socketUrl: `https://socket.rltech.xyz`
+    socketUrl: `https://node-socket.rltech.xyz/api`
   },
   /*
    ** Build configuration
