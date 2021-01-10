@@ -62,7 +62,7 @@
           show-empty
           :per-page="perPage"
           :current-page="currentPage"
-          sort-by="lastModify"
+          sort-by="id"
           :sort-desc="true"
         >
           <template v-slot:table-caption>{{ bottomLabel }}</template>
@@ -119,6 +119,11 @@ export default {
       currentPage: 1,
       fields: [
         {
+          key: "id",
+          label: "ID",
+          sortable: true
+        },
+        {
           key: "lastModify",
           label: "Last Modified",
           sortable: true
@@ -150,7 +155,6 @@ export default {
     },
     connectToServer() {
       this.socket = io.connect(process.env.socketUrl, { secure: true }); //connect to server
-
       // server replies
       this.socket.on("message", data => {
         if (data.value == 0) {
